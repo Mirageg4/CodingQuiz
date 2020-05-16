@@ -9,6 +9,8 @@ Game is over when...
     Timer reaches zero or
     All questions are answered.
 Input request for initials to save score to local storage.
-Score saved to local storage if
+Score saved to local storage if (score is amount of time left)
     Initials input is not empty and
     Click button to save score
+
+    High Score Optional
