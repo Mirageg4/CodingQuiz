@@ -1,7 +1,7 @@
-const startBtn = document.getElementById("startBtn");
-const questionContainerElement = document.getElementById("question-container");
-const questionElement = document.getElementById("question");
-const answerbtnsElement = document.getElementById("answer-btns");
+var startBtn = document.getElementById("startBtn");
+var questionContainer = document.getElementById("question-container");
+var showQuestions = document.getElementById("question");
+var answerbtns = document.getElementById("answer-btns");
 
 //Start button starts game
 startBtn.addEventListener("click", startQuiz) 
@@ -12,10 +12,10 @@ currentQuestionsIndex = 0
 }
 
 // Show the questions
-function showQuestions(questions, questionContainer) {
-    //const questions = []
-    //const choices = [[]]
-    //const answer = []
+function showQuestions() {
+    var questions = []
+    var choices = [[]]
+    var answer = []
 }
     //for(const i=0; i<questions.length; i++){
 
