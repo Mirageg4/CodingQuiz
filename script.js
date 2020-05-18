@@ -2,24 +2,28 @@ var startBtn = document.getElementById("startBtn");
 var questionContainer = document.getElementById("question-container");
 var showQuestions = document.getElementById("question");
 var answerbtns = document.getElementById("answer-btns");
+var answerbtns = document.getElementById("1");
+var answerbtns = document.getElementById("2");
+var answerbtns = document.getElementById("3");
+var answerbtns = document.getElementById("4");
+var submitButton = document.getElementById("submitBtn")
 
 //Start button starts game
 startBtn.addEventListener("click", startQuiz) 
 
-function startQuiz(){
-startBtn.questionContainerElement.questions()
-currentQuestionsIndex = 0
+function startQuiz() {
+
+
 }
 
 // Show the questions
-function showQuestions() {
-    var questions = []
-    var choices = [[]]
+function showQuestions(questions, questionContainer) {
+    var questions = [];
+    var choices = [[]];
     var answer = []
 }
-    //for(const i=0; i<questions.length; i++){
+    //for(var i=0; i < questions.length; i++)
 
-//}
 
     function showAnswer(answer){
 
@@ -29,7 +33,7 @@ function showQuestions() {
         showAnswer(answer)  
      
     }
-const questions = [
+var questions = [
     {
         question: 'Commonly used data types DO NOT include:',
         choices: ['strings', 'booleans', 'alerts', 'numbers'],

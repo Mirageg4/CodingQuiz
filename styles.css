@@ -53,3 +53,11 @@ padding: 10px 20px;
 background-color: green;
 color: white;
 }
+
+.submitBtn {
+    font-size: 16px;    
+    background-color: rgb(101, 220, 241);
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 10px 20px;
+    }
