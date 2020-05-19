@@ -1,67 +1,116 @@
 var startBtn = document.getElementById("startBtn");
-var questionContainer = document.getElementById("question-container");
-var showQuestions = document.getElementById("question");
+var quizContainer = document.getElementById("quiz-container");
+var questions = document.getElementById("questions");
+var question = document.getElementById("question");
+var currentQuestionIdx = 0;
+var choices = document.getElementById("choices");
+var answer = document.getElementById("answer");
 var answerbtns = document.getElementById("answer-btns");
 var answerbtns = document.getElementById("1");
 var answerbtns = document.getElementById("2");
 var answerbtns = document.getElementById("3");
 var answerbtns = document.getElementById("4");
-var submitButton = document.getElementById("submitBtn")
+var submitButton = document.getElementById("submitBtn");
+var questions = [];
+var choices = [[]];
+var answer = [];
 
 //Start button starts game
-startBtn.addEventListener("click", startQuiz) 
+startBtn.addEventListener("click", startQuiz)
+
 
 function startQuiz() {
-
-
+    
+    quizContainer.innerHTML = questions.question;
+    currentQuestionIdx = [0];
+       
 }
 
-// Show the questions
-function showQuestions(questions, questionContainer) {
-    var questions = [];
-    var choices = [[]];
-    var answer = []
+// Show the first question
+function showCurrentQuestion() {
+    //document.querySelector.questions;
+    var i=0; i < questions.length; i++;
+    
 }
-    //for(var i=0; i < questions.length; i++)
+    
+    var questions = [
+        {
+            question: 'Commonly used data types DO NOT include:',
+            choices: ['strings', 'booleans', 'alerts', 'numbers'],
+            answer: 'alerts',
+        },
+    
+        {
+            question: 'The condition in an if / else statement is enclosed within ____.',
+            choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
+            answer: 'parentheses',
+        },
+    
+        {
+            question: 'Arrays in JavaScript can be used to store ____.',
+            choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+            answer: 'all of the above',
+        },
+    
+        {
+            question: 'String values must be enclosed within ____ when being assigned to variables.',
+            choices: ['commas', 'curly brackets', 'quotes', 'parentheses'],
+            answer: 'quotes',
+        },
+    
+        {
+            question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+            choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
+            answer: 'console.log',
+        },
+    
+        ];
 
-
-    function showAnswer(answer){
+// Submit Question Answer
+function submitAnswer(answer){
 
     }
-    //click submit to show results
+    //Click submit to show results
     submitButton.onclick = function() {
         showAnswer(answer)  
      
     }
-var questions = [
-    {
-        question: 'Commonly used data types DO NOT include:',
-        choices: ['strings', 'booleans', 'alerts', 'numbers'],
-        answer: 'alerts',
-    },
+//Show the next question
+function showNextQuestion() {
+    currentQuestionIdx++;
+}
 
-    {
-        question: 'The condition in an if / else statement is enclosed within ____.',
-        choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
-        answer: 'parentheses',
-    },
+//Check if answer is correct/incorrect, and move to next question
+function checkAnswer() {
 
-    {
-        question: 'Arrays in JavaScript can be used to store ____.',
-        choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
-        answer: 'all of the above',
-    },
+}
 
-    {
-        question: 'String values must be enclosed within ____ when being assigned to variables.',
-        choices: ['commas', 'curly brackets', 'quotes', 'parentheses'],
-        answer: 'quotes',
-    },
+//handle wrong answer,(show user answer is wrong & remove time from timer)
+function wrongAnswer() {
 
-    {
-        question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
-        choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
-        answer: 'console.log',
-    },
+}
 
-    ];
+//handle correct answer(show user)
+function correctAnswer() {
+
+}
+
+//handle end of game via score or time
+function endGame() {
+
+}
+
+//ask user to input initials
+function inputInitials () {
+
+}
+
+//Save users score
+function saveScore () {
+
+}
+
+//Show the users score
+function showScore () {
+
+}
