@@ -1,5 +1,6 @@
 var startBtn = document.getElementById("startBtn");
 var quizContainer = document.getElementById("quiz-container");
+var timer = document.getElementById("timer");
 var questions = document.getElementById("questions");
 var question = document.getElementById("question");
 var currentQuestionIdx = 0;
@@ -16,19 +17,20 @@ var choices = [[]];
 var answer = [];
 
 //Start button starts game
-startBtn.addEventListener("click", startQuiz)
+document.getElementById("startBtn").addEventListener("click", startQuiz);
 
 
-function startQuiz() {
-    
-    quizContainer.innerHTML = questions.question;
-    currentQuestionIdx = [0];
+function startQuiz () {
+    //return questions.question.currentQuestionIdx=[0];
+    //currentQuestionIdx = [0];
+
+
+
+
        
-}
-
 // Show the first question
 function showCurrentQuestion() {
-    //document.querySelector.questions;
+    questions.innertext = questions
     var i=0; i < questions.length; i++;
     
 }
