@@ -1,40 +1,52 @@
-var startBtn = document.getElementById("startBtn");
-var quizContainer = document.getElementById("quiz-container");
+//Variables from index.html
+var questionsContainer = document.getElementById("questions-container");
 var timer = document.getElementById("timer");
-var questions = document.getElementById("questions");
-var question = document.getElementById("question");
-var currentQuestionIdx = 0;
-var choices = document.getElementById("choices");
-var answer = document.getElementById("answer");
+var highScore = document.getElementById("high-score");
+var startBtn = document.getElementById("startBtn");
 var answerbtns = document.getElementById("answer-btns");
-var answerbtns = document.getElementById("1");
-var answerbtns = document.getElementById("2");
-var answerbtns = document.getElementById("3");
-var answerbtns = document.getElementById("4");
-var submitButton = document.getElementById("submitBtn");
-var questions = [];
+var results = document.getElementById("results")
+var score = document.getElementById("score");
+
+//Variables in this script.js document
+var questions = document.getElementById("questions");
+
+var question = document.getElementById("question");
+var question = [];
+
+var choices = document.getElementById("choices");
 var choices = [[]];
+
+var answer = document.getElementById("answer");
 var answer = [];
 
-//Start button starts game
-document.getElementById("startBtn").addEventListener("click", startQuiz);
+var currentQuestionIdx = 0;
+
+//Variable response from choice clicked.
+var correct = "Correct Answer!";
+var incorrect = "Sorry, Incorrect Answer";
+
+
+//Start button starts game by calling startQuiz function
+document.getElementById("startBtn").addEventListener("click", startQuiz)
 
 
 function startQuiz () {
-    //return questions.question.currentQuestionIdx=[0];
-    //currentQuestionIdx = [0];
-
-
-
-
-       
-// Show the first question
-function showCurrentQuestion() {
-    questions.innertext = questions
-    var i=0; i < questions.length; i++;
+    document.getElementById("question-container")
+    
+    
+    
     
 }
+
+// Show the first question
+function showCurrentQuestion() {
+    question.innerText = question;
+    currentQuestionIdx = 0;
+    //for (i=0; i < questions.length; i++);
     
+}
+
+showCurrentQuestion();
     var questions = [
         {
             question: 'Commonly used data types DO NOT include:',
@@ -70,13 +82,16 @@ function showCurrentQuestion() {
 
 // Submit Question Answer
 function submitAnswer(answer){
+    document.getElementById("answer-btns").addEventListener("click", showAnswer)
+    }
 
-    }
     //Click submit to show results
-    submitButton.onclick = function() {
-        showAnswer(answer)  
      
-    }
+        function showAnswer() {
+
+        }
+     
+    
 //Show the next question
 function showNextQuestion() {
     currentQuestionIdx++;
