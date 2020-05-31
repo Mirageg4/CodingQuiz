@@ -7,7 +7,9 @@
     <title>Coding Quiz</title>
 </head>
 <body>
+    
     <div class="container">
+        <!--Holder for questions & answers-->
         <div id="questions-container">
     
     <h1>Coding Quiz Challenge</h1>
@@ -15,22 +17,36 @@
             Incorrect Answers will penalize your score time by 10 seconds.
         </p>
 
-        <div id ="timer">Time Remaining</div>
-        <div id ="high-score">High Score</div>
-        
+       
+        <!--Start Button-->
         <button id="startBtn" class="startBtn btn">Start Quiz</button>
 
-        <div id="answer-btns" class="btn-grid"></div>
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
-        </div>
 
-            
+        <!--Questions Area-->
+        <div id ="questions"></div>
+        
+        <!--Buttons for Multiple Choices-->
+        <div id="answer-btns" class="btn-grid"></div>
+        </div id="choices"></div>
+
+         <!--Response from chosen answer-->   
         <div id="results"></div> 
 
-        <div id="score"></div>
+        <!--Timer-->
+        <div id ="timer">Time Remaining</div>
+        
+        <!--High Score-->
+        <div id ="high-score">High Score</div>
+
+        <!--Scoring Field-->
+         <div id="score"></div>
+
+          <!--Enter Intitials-->
+          <input id="initials-input" type="text" placeholder="enter initials">
+
+          </div>
+
+
     </div> 
 
 
@@ -41,8 +57,7 @@
         //funtion for printing questions & answers to page
         //function to subtract time from clock
         // function to check if answer is correct
-
         //array of questions-->
-    </script>
+    
 </body>
 </html>

@@ -1,20 +1,22 @@
 //Variables from index.html
-var questionsContainer = document.getElementById("questions-container");
+var questionsContainer = document.getElementById("questions-container")
+var startBtn = document.getElementById("startBtn");
+var questions = document.getElementById("questions");
+var answerbtns = document.getElementById("answer-btns");
+var choices = document.getElementById("choices");
+var results = document.getElementById("results");
 var timer = document.getElementById("timer");
 var highScore = document.getElementById("high-score");
-var startBtn = document.getElementById("startBtn");
-var answerbtns = document.getElementById("answer-btns");
-var results = document.getElementById("results")
-var score = document.getElementById("score");
+var initials = document.getElementById("initials-input");
 
 //Variables in this script.js document
 var questions = document.getElementById("questions");
 
-var question = document.getElementById("question");
-var question = [];
+//var question = document.getElementById("question");
+var question = {};
 
-var choices = document.getElementById("choices");
-var choices = [[]];
+//var choices = document.getElementById("choices");
+var choices = [];
 
 var answer = document.getElementById("answer");
 var answer = [];
@@ -31,22 +33,27 @@ document.getElementById("startBtn").addEventListener("click", startQuiz)
 
 
 function startQuiz () {
-    document.getElementById("question-container")
+    //Start the timer
     
-    
-    
-    
+    //Show current question
+    document.getElementById("questions");
+
+    //document.appendChild("questions");
+    //document.appendChild(questions.question)[0];
+      console.log(startQuiz);
 }
+
 
 // Show the first question
 function showCurrentQuestion() {
-    question.innerText = question;
-    currentQuestionIdx = 0;
+    //document.getElementById("questions")[0];
+   // document.querySelector("questions")[0];
+    //document.getInnerText.questions
+    //currentQuestionIdx = 0;
     //for (i=0; i < questions.length; i++);
     
 }
 
-showCurrentQuestion();
     var questions = [
         {
             question: 'Commonly used data types DO NOT include:',
