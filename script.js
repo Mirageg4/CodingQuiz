@@ -3,25 +3,23 @@ var questionsContainer = document.getElementById("questions-container")
 var startBtn = document.getElementById("startBtn");
 var questions = document.getElementById("questions");
 var answerbtns = document.getElementById("answer-btns");
-var choices = document.getElementById("choices");
 var results = document.getElementById("results");
 var timer = document.getElementById("timer");
 var highScore = document.getElementById("high-score");
 var initials = document.getElementById("initials-input");
 
-//Variables in this script.js document
-var questions = document.getElementById("questions");
-
-//var question = document.getElementById("question");
-var question = {};
-
-//var choices = document.getElementById("choices");
-var choices = [];
-
-var answer = document.getElementById("answer");
-var answer = [];
-
 var currentQuestionIdx = 0;
+
+//Variable response from choice clicked.
+var correct = "Correct Answer!";
+var incorrect = "Sorry, Incorrect Answer";
+
+
+var question = '';
+var choices = [];
+var answer = '';
+
+
 
 var questions = [
     {
@@ -56,11 +54,6 @@ var questions = [
 
     ];
 
-//Variable response from choice clicked.
-var correct = "Correct Answer!";
-var incorrect = "Sorry, Incorrect Answer";
-
-
 //Start button starts game by calling startQuiz function
 document.getElementById("startBtn").addEventListener("click", startQuiz)
 
@@ -68,34 +61,38 @@ document.getElementById("startBtn").addEventListener("click", startQuiz)
 function startQuiz () {
     //Start the timer
     
-    //Show current question
-    //var currentQuestionIdx = 0;
-    var questions = document.getElementById("questions");
-    questions.innerHTML += "<div>" + questions[currentQuestionIdx] + "</div>";
-    choices.innerHTML += "<div>" + choices[""] + "</div>";
-    currentQuestionIdx++;
+    // Show the first question
+    document.getElementById("questions").innerHTML = questions["question:"] + questions["choices:"];
+    //Result NaN
 
-    //for (i=0; i < questions.length; i++);
+    //document.getElementById("questions").innerHTML = questions[question] + questions[choices];
+    //Result NaN
+
+    //document.getElementById("questions").innerHTML = questions.question + questions.choices;
+    //Result NaN
+
+    //document.getElementById("questions").innerHTML = questions,question + questions,choices;
+    //Result [object Object],[object Object],[object Object],[object Object],[object Object]
     
-
-
-    //for (i=0; i < questions.length; i++);
-
-    //document.appendChild("questions");
-    //document.appendChild(questions.question)[0];
+    
+    
+    currentQuestionIdx++;
+    for (i=0; i < questions.length; i++);
+    
+    //var currentQuestionIdx = 0;
+    //var questions = document.getElementById("questions");
+    //questions.innerHTML += "<div>" + questions[currentQuestionIdx] + "</div>";
+    //choices.innerHTML += "<div>" + choices[""] + "</div>";
+   
+    
       
 }
 
 
 
-
-// Show the first question
+//Show current question
 function showCurrentQuestion() {
-    //document.getElementById("questions")[0];
-   // document.querySelector("questions")[0];
-    //document.getInnerText.questions
-    //currentQuestionIdx = 0;
-    //for (i=0; i < questions.length; i++);
+   
     
 }
 
