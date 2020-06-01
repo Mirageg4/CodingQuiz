@@ -69,7 +69,7 @@ function startQuiz () {
     //Start the timer
     
     //Show current question
-    var currentQuestionIdx = 0;
+    //var currentQuestionIdx = 0;
     var questions = document.getElementById("questions");
     questions.innerHTML += "<div>" + questions[currentQuestionIdx] + "</div>";
     choices.innerHTML += "<div>" + choices[""] + "</div>";
