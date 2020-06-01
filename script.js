@@ -36,7 +36,11 @@ function startQuiz () {
     //Start the timer
     
     //Show current question
-    document.getElementById("questions").innerHTML = questions.[0];
+    document.getElementById("questions").innerHTML = questions[0];
+    for (i=0; i < questions.length; i++);
+    
+
+
     //for (i=0; i < questions.length; i++);
 
     //document.appendChild("questions");
