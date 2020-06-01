@@ -23,6 +23,39 @@ var answer = [];
 
 var currentQuestionIdx = 0;
 
+var questions = [
+    {
+        question: 'Commonly used data types DO NOT include:',
+        choices: ['strings', 'booleans', 'alerts', 'numbers'],
+        answer: 'alerts',
+    },
+
+    {
+        question: 'The condition in an if / else statement is enclosed within ____.',
+        choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
+        answer: 'parentheses',
+    },
+
+    {
+        question: 'Arrays in JavaScript can be used to store ____.',
+        choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
+        answer: 'all of the above',
+    },
+
+    {
+        question: 'String values must be enclosed within ____ when being assigned to variables.',
+        choices: ['commas', 'curly brackets', 'quotes', 'parentheses'],
+        answer: 'quotes',
+    },
+
+    {
+        question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+        choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
+        answer: 'console.log',
+    },
+
+    ];
+
 //Variable response from choice clicked.
 var correct = "Correct Answer!";
 var incorrect = "Sorry, Incorrect Answer";
@@ -36,8 +69,13 @@ function startQuiz () {
     //Start the timer
     
     //Show current question
-    document.getElementById("questions").innerHTML = questions[0];
-    for (i=0; i < questions.length; i++);
+    var currentQuestionIdx = 0;
+    var questions = document.getElementById("questions");
+    questions.innerHTML += "<div>" + questions[currentQuestionIdx] + "</div>";
+    choices.innerHTML += "<div>" + choices[""] + "</div>";
+    currentQuestionIdx++;
+
+    //for (i=0; i < questions.length; i++);
     
 
 
@@ -48,7 +86,7 @@ function startQuiz () {
       
 }
 
-startQuiz();
+
 
 
 // Show the first question
@@ -61,38 +99,7 @@ function showCurrentQuestion() {
     
 }
 
-    var questions = [
-        {
-            question: 'Commonly used data types DO NOT include:',
-            choices: ['strings', 'booleans', 'alerts', 'numbers'],
-            answer: 'alerts',
-        },
     
-        {
-            question: 'The condition in an if / else statement is enclosed within ____.',
-            choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
-            answer: 'parentheses',
-        },
-    
-        {
-            question: 'Arrays in JavaScript can be used to store ____.',
-            choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
-            answer: 'all of the above',
-        },
-    
-        {
-            question: 'String values must be enclosed within ____ when being assigned to variables.',
-            choices: ['commas', 'curly brackets', 'quotes', 'parentheses'],
-            answer: 'quotes',
-        },
-    
-        {
-            question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
-            choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
-            answer: 'console.log',
-        },
-    
-        ];
 
 // Submit Question Answer
 function submitAnswer(answer){

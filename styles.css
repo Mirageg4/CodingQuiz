@@ -1,8 +1,13 @@
-*, *::before,
- *, *::after {
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
+
+
+.container {
+    width:800px;
+    max-width: 80%;
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+} 
 
 body {
     background-color: lightblue;
@@ -23,14 +28,7 @@ p   {
     text-align: center;
 }
 
-.container {
-    width:800px;
-    max-width: 80%;
-    background-color: lightgray;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-}
+
 
 .btn-grid {
     display: grid;
