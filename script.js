@@ -36,12 +36,15 @@ function startQuiz () {
     //Start the timer
     
     //Show current question
-    document.getElementById("questions");
+    document.getElementById("questions").innerHTML = questions.[0];
+    //for (i=0; i < questions.length; i++);
 
     //document.appendChild("questions");
     //document.appendChild(questions.question)[0];
-      console.log(startQuiz);
+      
 }
+
+startQuiz();
 
 
 // Show the first question
