@@ -79,7 +79,12 @@ document.querySelector(".answer-choice").addEventListener("click", submitAnswer)
 
 // Submit Question Answer
 function submitAnswer(event) {
-    console.log(event.target)
+    var answerbtns = event.target.checkAnswer;
+    //if($(event.target= `answer-choice-${2}`);
+
+    document.getElementById("answer-btns").innerHTML = (correct);
+
+    //console.log(event.target)
     //Click submit to show results
      
     function showAnswer() {
