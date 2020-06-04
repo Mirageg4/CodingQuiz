@@ -69,7 +69,7 @@ function startQuiz () {
 function showCurrentQuestion(questionIdx) {
     document.getElementById("questions").innerHTML = questions[questionIdx].text;
 
-    for (var i = 0; i < questions[questionIdx].choices.length; i++) {
+    for (var i = 0; i <questions[questionIdx].choices.length; i++) {
          document.getElementById(`answer-choice-${i}`).innerHTML = `${questions[questionIdx].choices[i]}`;
     }    
 }
@@ -79,19 +79,18 @@ document.querySelector(".answer-choice").addEventListener("click", submitAnswer)
 
 // Submit Question Answer
 function submitAnswer(event) {
-    var answerbtns = event.target.checkAnswer;
-    //if($(event.target= `answer-choice-${2}`);
 
-    document.getElementById("answer-btns").innerHTML = (correct);
-
-    //console.log(event.target)
-    //Click submit to show results
-     
-    function showAnswer() {
-
-    }
-     
+    // answer is correct
+    if (event[''] === answer){
+        document.getElementById("answer-btns").innerHTML = (correct); 
+        //correctAnswer();
+    }else {
+       // answer is wrong
+       document.getElementById("answer-btns").innerHTML = (incorrect);
 }
+}
+
+
 //Show the next question
 function showNextQuestion() {
     currentQuestionIdx++;
@@ -100,16 +99,23 @@ function showNextQuestion() {
 //Check if answer is correct/incorrect, and move to next question
 function checkAnswer() {
 
+    // answer is correct
+    if( answer == choices[i].correct){
+        correctAnswer();
+    }else{
+        // answer is wrong
+        if( answer !== choices[i].incorrect)
+        answerIsWrong();
 }
-
+}
 //handle wrong answer,(show user answer is wrong & remove time from timer)
 function wrongAnswer() {
-
+    document.getElementById("answer-btns").innerHTML = (incorrect);
 }
 
 //handle correct answer(show user)
 function correctAnswer() {
-
+    document.getElementById("answer-btns").innerHTML = (correct);
 }
 
 //handle end of game via score or time
@@ -131,3 +137,4 @@ function saveScore () {
 function showScore () {
 
 }
+
