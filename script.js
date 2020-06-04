@@ -19,35 +19,33 @@ var question = '';
 var choices = [];
 var answer = '';
 
-
-
 var questions = [
     {
-        question: 'Commonly used data types DO NOT include:',
+        text: 'Commonly used data types DO NOT include:',
         choices: ['strings', 'booleans', 'alerts', 'numbers'],
         answer: 'alerts',
     },
 
     {
-        question: 'The condition in an if / else statement is enclosed within ____.',
+        text: 'The condition in an if / else statement is enclosed within ____.',
         choices: ['quotes', 'curly brackets', 'parentheses', 'square brackets'],
         answer: 'parentheses',
     },
 
     {
-        question: 'Arrays in JavaScript can be used to store ____.',
+        text: 'Arrays in JavaScript can be used to store ____.',
         choices: ['numbers and strings', 'other arrays', 'booleans', 'all of the above'],
         answer: 'all of the above',
     },
 
     {
-        question: 'String values must be enclosed within ____ when being assigned to variables.',
+        text: 'String values must be enclosed within ____ when being assigned to variables.',
         choices: ['commas', 'curly brackets', 'quotes', 'parentheses'],
         answer: 'quotes',
     },
 
     {
-        question: 'A very useful tool used during development and debugging for printing content to the debugger is:',
+        text: 'A very useful tool used during development and debugging for printing content to the debugger is:',
         choices: ['JavaScript', 'terminal / bash', 'for loops', 'console.log'],
         answer: 'console.log',
     },
@@ -59,57 +57,36 @@ document.getElementById("startBtn").addEventListener("click", startQuiz)
 
 
 function startQuiz () {
-    //Start the timer
+    // TODO:Start the timer
     
     // Show the first question
-    document.getElementById("questions").innerHTML = questions["question:"] + questions["choices:"];
-    //Result NaN
-
-    //document.getElementById("questions").innerHTML = questions[question] + questions[choices];
-    //Result NaN
-
-    //document.getElementById("questions").innerHTML = questions.question + questions.choices;
-    //Result NaN
-
-    //document.getElementById("questions").innerHTML = questions,question + questions,choices;
-    //Result [object Object],[object Object],[object Object],[object Object],[object Object]
-    
-    
-    
-    currentQuestionIdx++;
-    for (i=0; i < questions.length; i++);
-    
-    //var currentQuestionIdx = 0;
-    //var questions = document.getElementById("questions");
-    //questions.innerHTML += "<div>" + questions[currentQuestionIdx] + "</div>";
-    //choices.innerHTML += "<div>" + choices[""] + "</div>";
-   
-    
+    showCurrentQuestion(currentQuestionIdx);
       
+    // TODO: Reveal question text element and question choice buttons
 }
-
-
 
 //Show current question
-function showCurrentQuestion() {
-   
-    
+function showCurrentQuestion(questionIdx) {
+    document.getElementById("questions").innerHTML = questions[questionIdx].text;
+
+    for (var i = 0; i < questions[questionIdx].choices.length; i++) {
+         document.getElementById(`answer-choice-${i}`).innerHTML = `${questions[questionIdx].choices[i]}`;
+    }    
 }
 
+document.querySelector(".answer-choice").addEventListener("click", submitAnswer)
     
 
 // Submit Question Answer
-function submitAnswer(answer){
-    document.getElementById("answer-btns").addEventListener("click", showAnswer)
-    }
-
+function submitAnswer(event) {
+    console.log(event.target)
     //Click submit to show results
      
-        function showAnswer() {
+    function showAnswer() {
 
-        }
+    }
      
-    
+}
 //Show the next question
 function showNextQuestion() {
     currentQuestionIdx++;
