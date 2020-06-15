@@ -83,9 +83,8 @@ function startTimer() {
         }, 1000);    
     };
 
-/////////////
     
-    setInterval(function (seconds) {
+        setInterval(function (seconds) {
         
         
         //startTime
@@ -100,9 +99,10 @@ function startTimer() {
 
         // TODO: Decrement timer by one second
         var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
         // TODO: Determine if game is over
 
-        //if (seconds <= 0) {
+        //if (seconds = 0) {
             clearInterval();
 
         // TODO: If game is over, call endGame()
