@@ -78,11 +78,11 @@ document.querySelector(".answer-choice").addEventListener("click", submitAnswer)
     
 
 // Submit Question Answer
-function submitAnswer(event) {
+function submitAnswer(choices) {
 
     // answer is correct
-    if (event[''] === answer){
-        document.getElementById("answer-btns").innerHTML = (correct); 
+    if (choices.event === answer){
+        document.getquerySelector("Correct").innerHTML = (correct); 
         //correctAnswer();
     }else {
        // answer is wrong
