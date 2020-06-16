@@ -70,11 +70,16 @@ function startQuiz() {
         }
     // TODO: Start the timer
 function startTimer() {
-            var countdown =setInterval(function() {
+            var countdown = setInterval(function() {
             timer.textContent = 'Time Remaining: ' + startTime;
             startTime--;
-    
-            clearInterval(timer);
+
+    // Stop the timer
+                if(startTime <= 0){
+                    clearstartTime()
+                }
+            clearInterval(startTime);
+
                 endGame();
             
             {
@@ -84,14 +89,14 @@ function startTimer() {
     };
 
     
-        setInterval(function (seconds) {
+        setInterval(function (startTime) {
         
         
         //startTime
         (startTime);
     
         // TODO: Select the #timer container
-        document.getElementById("timer").text = seconds;
+        document.getElementById("timer").text = startTime;
 
 
         // TODO: Show time remaining as the innerHTML of #timer
@@ -102,12 +107,14 @@ function startTimer() {
 
         // TODO: Determine if game is over
 
-        //if (seconds = 0) {
+        if (seconds = 0) {
             clearInterval();
-
+        }
         // TODO: If game is over, call endGame()
         //document.getElementById("timer").innerHTML = "Game Over";
-    }, 1000)
+
+    }, 1000);
+
     
     // Show the first question
     showCurrentQuestion(currentQuestionIdx);
@@ -139,17 +146,14 @@ function submitAnswer(e) {
         //correctAnswer();
     }
     
-    // answer is wrong
+    // answer is wrong 10 seconds is taken off the clock
     else {
        document.querySelector("#results").innerHTML = incorrect;
+       startTime = startTime-10;
     }
 
     showNextQuestion()
 }
-
-var arr = [0, 1, 3]
-
-arr[3] // undefined
 
 //Show the next question
 function showNextQuestion() {
@@ -162,6 +166,7 @@ function showNextQuestion() {
 
 //handle end of game via score or time
 function endGame() {
+
     clearstartTime();
     console.log("Game over!")
     // Hide #questions, #answer-btns
@@ -183,3 +188,11 @@ function showScore () {
 
 }
 
+
+//StartQuiz hides after quiz starts
+//Timer countdown begins counting down by 1 second
+//Timer removes 10 seconds for incorrect answer
+
+
+
+//Why is timer stopping at 3 seconds?
