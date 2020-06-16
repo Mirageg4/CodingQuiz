@@ -56,71 +56,62 @@ var questions = [
     ];
 
 //Start button starts game by calling startQuiz function
-document.getElementById("startBtn").addEventListener("click", startQuiz)
+    document.getElementById("startBtn").addEventListener("click", startQuiz)
 
 
 function startQuiz() {
-    // TODO: Hide start button
-     document.getElementById("startBtn").style.visibility = "hidden";
+
+// TODO: Hide start button
+    document.getElementById("startBtn").style.visibility = "hidden";
         
-    /* Matthew Comment $("startBtn").click(function() {
-    $("startBtn").hide(); */
         
         startTimer();
         }
-    // TODO: Start the timer
+
+// TODO: Start the timer
 function startTimer() {
-            var countdown = setInterval(function() {
-            timer.textContent = 'Time Remaining: ' + startTime;
-            startTime--;
+    var countdown = setInterval(function() {
+    timer.textContent = 'Time Remaining: ' + startTime;
+    startTime--;
 
-    // Stop the timer
-                if(startTime <= 0){
-                    clearstartTime()
-                }
-            clearInterval(startTime);
-
-                endGame();
-            
-            {
+// Stop the timer
+    if(startTime === 0 || currentQuestionIdx === questions.length){
                 
-            }
-        }, 1000);    
+    endGame();
+    }  
+    
+    }, 1000);    
     };
 
     
-        setInterval(function (startTime) {
+    setInterval(function (startTime) {
         
         
-        //startTime
+//startTime
         (startTime);
     
-        // TODO: Select the #timer container
-        document.getElementById("timer").text = startTime;
+// TODO: Select the #timer container
+    document.getElementById("timer").text = startTime;
 
 
-        // TODO: Show time remaining as the innerHTML of #timer
+// TODO: Show time remaining as the innerHTML of #timer
+    
+
+// TODO: Decrement timer by one second
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+// TODO: Determine if game is over
+
+    
+// TODO: If game is over, call endGame()
         
-
-        // TODO: Decrement timer by one second
-        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-        // TODO: Determine if game is over
-
-        if (seconds = 0) {
-            clearInterval();
-        }
-        // TODO: If game is over, call endGame()
-        //document.getElementById("timer").innerHTML = "Game Over";
 
     }, 1000);
 
     
-    // Show the first question
+// Show the first question
     showCurrentQuestion(currentQuestionIdx);
       
-
-
 //Show current question
 function showCurrentQuestion(questionIdx) {
     document.getElementById("questions").innerHTML = questions[questionIdx].text;
@@ -140,13 +131,13 @@ for(var i = 0; i < answerBtns.length; i++) {
 function submitAnswer(e) {
     var userAnswer = e.target.textContent;
  
-    // answer is correct
+// answer is correct
     if (userAnswer === questions[currentQuestionIdx].answer){
         document.querySelector("#results").innerHTML = correct; 
-        //correctAnswer();
+//correctAnswer();
     }
     
-    // answer is wrong 10 seconds is taken off the clock
+// answer is wrong 10 seconds is taken off the clock
     else {
        document.querySelector("#results").innerHTML = incorrect;
        startTime = startTime-10;
@@ -166,10 +157,10 @@ function showNextQuestion() {
 
 //handle end of game via score or time
 function endGame() {
-
-    clearstartTime();
-    console.log("Game over!")
-    // Hide #questions, #answer-btns
+    if (currentQuestionIdx >= questions.length || startTime === 0);
+    clearTimeout();
+    document.getElementById("results").innerHTML = "Game over!";
+    
 
 }
 
@@ -189,10 +180,10 @@ function showScore () {
 }
 
 
-//StartQuiz hides after quiz starts
+//StartQuiz button hides after quiz starts
 //Timer countdown begins counting down by 1 second
 //Timer removes 10 seconds for incorrect answer
+//Game Over returns when all questions are answered or timer reaches 0 (1 second??)
 
 
-
-//Why is timer stopping at 3 seconds?
+//Why is timer continuing past zero?
