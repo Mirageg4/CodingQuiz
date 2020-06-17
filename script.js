@@ -11,7 +11,8 @@ var initials = document.getElementById("initials-input");
 var currentQuestionIdx = 0;
 
 // TODO: Time remaining variable (should contain your start time)
-var startTime = 20;
+var countdown;
+var startTime = 60;
 
 //Variable response from choice clicked.
 var correct = "Correct Answer!";
@@ -21,6 +22,8 @@ var incorrect = "Sorry, Incorrect Answer";
 var question = '';
 var choices = [];
 var answer = '';
+
+var scores;
 
 var questions = [
     {
@@ -56,61 +59,32 @@ var questions = [
     ];
 
 //Start button starts game by calling startQuiz function
-    document.getElementById("startBtn").addEventListener("click", startQuiz)
+document.getElementById("startBtn").addEventListener("click", startQuiz)
 
 
 function startQuiz() {
 
-// TODO: Hide start button
+    // TODO: Hide start button
     document.getElementById("startBtn").style.visibility = "hidden";
         
-        
-        startTimer();
-        }
+    startTimer();
+
+    showCurrentQuestion(currentQuestionIdx)
+}
 
 // TODO: Start the timer
 function startTimer() {
-    var countdown = setInterval(function() {
-    timer.textContent = 'Time Remaining: ' + startTime;
-    startTime--;
+    countdown = setInterval(function () {
+        startTime--;
+        timer.textContent = 'Time Remaining: ' + startTime;
 
-// Stop the timer
-    if(startTime === 0 || currentQuestionIdx === questions.length){
-    endGame();
-
-    
-    }  
-    
+        // Stop the timer
+        if (startTime === 0) {
+            endGame();
+        }  
+        
     }, 1000);    
-    };
-
-    
-    setInterval(function (startTime) {
-        
-        
-//startTime
-        (startTime);
-    
-// TODO: Select the #timer container
-    document.getElementById("timer").text = startTime;
-
-
-// TODO: Show time remaining as the innerHTML of #timer
-    
-
-// TODO: Decrement timer by one second
-    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-// TODO: Determine if game is over
-    
-// TODO: If game is over, call endGame()
-        
-
-    }, 1000);
-
-    
-// Show the first question
-    showCurrentQuestion(currentQuestionIdx);
+};
       
 //Show current question
 function showCurrentQuestion(questionIdx) {
@@ -157,32 +131,36 @@ function showNextQuestion() {
 
 //handle end of game via score or time
 function endGame() {
-    if (currentQuestionIdx >= questions.length || startTime === 0);
+    // Clear timer
+    clearInterval(countdown)
+
     document.getElementById("results").innerHTML = "Game over!";
-    
 
-}
+    var userInitials = inputInitials();
 
-//ask user to input initials
-function inputInitials () {
+    saveScore(userInitials, startTime)
 
 }
 
 //Save users score
-function saveScore () {
+function saveScore(username, score) {
+    console.log(username, score)
+
+    var scoreEntry = username + " " + score;
+
+    scores.push(scoreEntry) 
+
+    localStorage.setItem("scores", JSON.stringify(scores))
 
 }
 
 //Show the users score
 function showScore () {
+    var valuesFromLocal = localStorage.getItem("scores")
+        
+    var parsedScores = JSON.parse(valuesFromLocal)
 
+    
 }
 
 
-//StartQuiz button hides after quiz starts
-//Timer countdown begins counting down by 1 second
-//Timer removes 10 seconds for incorrect answer
-//Game Over returns when all questions are answered or timer reaches 0 (1 second??)
-
-
-//Why is timer continuing past zero?
