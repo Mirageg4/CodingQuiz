@@ -76,8 +76,9 @@ function startTimer() {
 
 // Stop the timer
     if(startTime === 0 || currentQuestionIdx === questions.length){
-                
     endGame();
+
+    
     }  
     
     }, 1000);    
@@ -101,7 +102,6 @@ function startTimer() {
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
 // TODO: Determine if game is over
-
     
 // TODO: If game is over, call endGame()
         
@@ -158,7 +158,6 @@ function showNextQuestion() {
 //handle end of game via score or time
 function endGame() {
     if (currentQuestionIdx >= questions.length || startTime === 0);
-    clearTimeout();
     document.getElementById("results").innerHTML = "Game over!";
     
 
