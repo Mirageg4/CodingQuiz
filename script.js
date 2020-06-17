@@ -137,7 +137,7 @@ function submitAnswer(e) {
 //correctAnswer();
     }
     
-// answer is wrong 10 seconds is taken off the clock
+// if answer is wrong 10 seconds are taken off the clock
     else {
        document.querySelector("#results").innerHTML = incorrect;
        startTime = startTime-10;
