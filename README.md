@@ -18,7 +18,7 @@
 <p>Live Link: <a href="https://mirageg4.github.io/CodingQuiz/.">Coding Quiz</a></p>
 <p>Github: <a href="https://github.com/Mirageg4/CodingQuiz/">Coding Quiz Repo</a></p>
 <hr>
-<img src ="assets/ScreenShot.png"/>
+<img src ="assets/screenShot.png"/>
 <hr>              
 <p>License: Project is licensed under the MIT License. 
 See <a href ="LICENSE.md">LICENSE</a> file for details.
